@@ -1,0 +1,132 @@
+const Confirmed = document.querySelector(`.Confirmed`),
+    Deaths = document.querySelector(`.Deaths`),
+    Recoverd = document.querySelector(`.Recoverd`),
+    Critical = document.querySelector(`.Critical`),
+    Asia = document.querySelector(`.Asia`),
+    Europe = document.querySelector(`.Europe`),
+    Africa = document.querySelector(`.Africa`),
+    Americas = document.querySelector(`.Americas`),
+    World = document.querySelector(`.World`);
+
+async function getCountry() {
+    let statsCountry = await (
+        await fetch("https://corona-api.com/countries")
+    ).json();
+    countryArray = statsCountry.data.map((item) => {
+        return {
+            NameCon: item.name,
+            confirmed: item.latest_data.confirmed,
+            deaths: item.latest_data.deaths,
+            recovered: item.latest_data.recovered,
+            critical: item.latest_data.critical,
+            today_confirmed: item.today.confirmed,
+            today_deaths: item.today.deaths,
+        };
+    });
+    window.localStorage.setItem("countries", JSON.stringify(countryArray));
+}
+
+// getCountry()
+let getCount = JSON.parse(window.localStorage.getItem("countries"));
+console.log(getCount)
+async function getRegion() {
+    let Region = await (
+        await fetch(
+            "https://api.allorigins.win/raw?url=https://restcountries.herokuapp.com/api/v1"
+        )
+    ).json();
+    regionArray = Region.filter((val) => val.region.length > 0).map((item) => {
+        return {
+            Name: item.name.common,
+            region: item.region,
+        };
+    });
+    window.localStorage.setItem("regions", JSON.stringify(regionArray));
+}
+
+
+// getRegion();
+let getReg = JSON.parse(window.localStorage.getItem("regions"));
+console.log(getReg);
+let myChart;
+function charpaint(countriesname, datacase) {
+    if (myChart) {
+        myChart.destroy();
+    }
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: countriesname,
+            datasets: [{
+                label: '# of Votes',
+                data: datacase,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            maintainAspectRatio: false
+        },
+    });
+}
+
+function getland (land) {
+    return getReg.filter((s) => {
+      if (s.region == land ){
+        return s.Name;
+      }  
+    })
+}
+
+console.log( getland (`Asia`));
+
+// // Confirmed.addEventListener(`click,`)
+
+
+
+// // Deaths.addEventListener(`click,`)
+
+
+
+// // Recoverd.addEventListener(`click,`)
+
+
+
+// // Critical.addEventListener(`click,`)
+
+
+
+// Asia.addEventListener(`click,`)
+
+
+
+// // Europe.addEventListener(`click,`)
+
+
+
+// // Africa.addEventListener(`click,`)
+
+
+
+// // Americas.addEventListener(`click,`)
+
+
+
+// // World.addEventListener(`click,`) 
+

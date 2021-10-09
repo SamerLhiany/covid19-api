@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./img/logo.png" type="image/gif">
+    <link rel="stylesheet" href="./style.css">
+    <title>Covid 19 API</title>
+</head>
+
+<body>
+    <h1>Covid 19 Stats</h1>
+    <div class="chart">
+        <canvas id="myChart"></canvas>
+    </div>
+    <br><br>
+    <div class="maincontainer">
+        <div class="container">
+            <input class="btn1 Confirmed" type="button" value="Confirmed">
+            <input class="btn1 Deaths" type="button" value="Deaths">
+            <input class="btn1 Recoverd" type="button" value="Recoverd">
+            <input class="btn1 Critical" type="button" value="Critical">
+        </div>
+        <br>
+        <div class="landcontainer">
+            <input class="btn Asia" type="button" value="Asia">
+            <input class="btn Europe" type="button" value="Europe">
+            <input class="btn Africa" type="button" value="Africa">
+            <input class="btn Americas" type="button" value="Americas">
+            <input class="btn World" type="button" value="World">
+        </div>
+    </div>
+
+    <div class="selectcountry">
+        <select name="selectcountry" id="selectcountry"></select>
+    </div> 
+
+    <div class="info-country">
+        <div class=" TotalCases">
+            <p>Total Cases <span></span></p>
+            <p class="itay TotalCasesnum"></p>
+        </div>
+        <div class="NewCases">
+            <p>New Cases</p>
+            <p class="itay NewCasesnum"></p>
+        </div>
+        <div class="TotalDeathes">
+            <p>Total Deathes</p>
+            <p class="itay TotalDeathesnum"></p>
+        </div>
+        <div class="NewDeathes">
+            <p>New Deathes</p>
+            <p class="itay NewDeathesnum"></p>
+        </div>
+        <div class="totalRecovered">
+            <p>Total Recovered</p>
+            <p class="itay totalRecoverednum"></p>
+        </div>
+        <div class="critical">
+            <p>Critical</p>
+            <p class="itay criticalnum"></p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>

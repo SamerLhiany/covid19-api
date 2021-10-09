@@ -1,0 +1,95 @@
+body {
+    height: 100vh;
+    width: 98vw;
+    background: url(./img/cover\ img2.jpg) no-repeat center center /cover;
+  }
+
+h1 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+  }
+
+.chart {
+    height: 50%;
+    width: 100%;
+  }
+
+.maincontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.landcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.btn{
+    padding: 3%;
+    margin: 5%;
+    height: 100%;
+    width: 50%;
+    border: 10% solid #fff;
+    transition: .5s;
+    background-image: linear-gradient(#405661 45%, #1d2a31 55%);
+    color: #fff;
+    cursor: pointer;
+  }
+
+.btn:hover {
+    -webkit-box-shadow: 0 0 5px #fff;
+    box-shadow: 0 0 5px #fff;
+    transition: .2s;
+  }
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }  
+
+.btn1{
+    padding: 3%;
+    margin: 5%;
+    height: 100%;
+    width: 50%;
+    border: 10% solid #fff;
+    transition: .5s;
+    background-image: linear-gradient(#A32329 45%, #a32329f3 55%);
+    color: #fff;
+    cursor: pointer;
+  }
+
+.btn1:hover {
+    -webkit-box-shadow: 0 0 5px #fff;
+    box-shadow: 0 0 5px #fff;
+    transition: .2s;
+  }
+
+.info-country {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 900;
+  }
+
+.itay {
+    border: white solid 0.1rem;
+    padding: 5%;
+    text-align: center;
+    color: #A72D32;
+  }
+
+  .selectcountry  {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+  }
+
+  #selectcountry {
+    width: 20%;
+    padding: 0.6%;
+    margin: 2%;
+  }
