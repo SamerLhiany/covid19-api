@@ -35,7 +35,7 @@ async function getCountry() {
     window.localStorage.setItem("countries", JSON.stringify(countryArray));
 }
 
-// getCountry()
+getCountry()
 let getCount = JSON.parse(window.localStorage.getItem("countries"));
 console.log(getCount)
 async function getRegion() {
@@ -54,7 +54,7 @@ async function getRegion() {
 }
 
 
-// getRegion();
+getRegion();
 let getReg = JSON.parse(window.localStorage.getItem("regions"));
 console.log(getReg);
 let myChart;
